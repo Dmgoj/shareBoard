@@ -11,17 +11,18 @@ abstract class Model{
         $this->stmt=$this->dbh->prepare($query);
     }
 
+    // Binds the prep statement
     public function bind($param, $value, $type = null){
         if (is_null($type)){
             switch(true){
                 case is_int($value):
-                    $tpye=PDO::PARAM_INT;
+                    $type=PDO::PARAM_INT;
                 break;
                 case is_bool($value):
-                    $tpye=PDO::PARAM_BOOL;
+                    $type=PDO::PARAM_BOOL;
                 break;
                 case is_null($value):
-                    $tpye=PDO::PARAM_NULL;
+                    $type=PDO::PARAM_NULL;
                 break;
                 default:
                 $type=PDO::PARAM_STR;
