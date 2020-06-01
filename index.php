@@ -19,4 +19,3 @@ $controller=$bootstrap->createController();
 if($controller){
     $controller->executeAction();
 }
-

@@ -21,14 +21,14 @@ class Bootstrap{
     }
 
         public function createController(){
-            // Check class
+            // Check Class
             if(class_exists($this->controller)){
                 $parents=class_parents($this->controller);
                 
-                // Check extend
-                if(in_array('Controller',$parents)){
+                // Check Extend
+                if(in_array("Controller",$parents)){
                     if(method_exists($this->controller, $this->action)){
-                        return new $this->controller($this->action,$this->request);
+                        return new $this->controller($this->action, $this->request);
                     }else{
                         // Method Does Not Exist
                         echo '<h1>Method does not exist</h1>';

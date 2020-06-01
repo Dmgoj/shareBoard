@@ -4,7 +4,7 @@ abstract class Model{
     protected $stmt;
 
     public function __construct(){
-        $this->dbh=new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER,DB_PASS);
+        $this->dbh=new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME, DB_USER, DB_PASS);
     }
 
     public function query($query){
@@ -28,7 +28,7 @@ abstract class Model{
                 $type=PDO::PARAM_STR;
             }
         }
-        $this->stmt->bindValue($param,$value,$type);
+        $this->stmt->bindValue($param, $value, $type);
     }
     
     public function execute(){
@@ -38,7 +38,5 @@ abstract class Model{
     public function resultSet(){
         $this->execute();
         return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
-
     }
-
 }

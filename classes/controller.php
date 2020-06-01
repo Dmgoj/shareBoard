@@ -8,7 +8,7 @@ abstract class Controller{
         $this->request=$request;
     }
     
-    public  function executeAction(){
+    public function executeAction(){
         return $this->{$this->action}();
     }
 
@@ -19,6 +19,5 @@ abstract class Controller{
         }else{
             require($view);
         }
-
     }
 }
