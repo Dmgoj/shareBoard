@@ -23,5 +23,6 @@ class ShareModel extends Model{
                 header('Location:'.ROOT_URL.'shares');
             }
         }
+        return;
     }
 }
