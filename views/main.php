@@ -18,12 +18,21 @@
     </ul>
 
     <ul class="navbar-nav navbar-right mr-auto">
+    <?php if(isset($_SESSION['is_logged_in'])) :?>
+      <li >
+        <a class="nav-link" href="<?php echo ROOT_URL; ?>">Welcome <?php echo $_SESSION['user_data']['name'];?><span class="sr-only">(current)</span></a>
+      </li>
+      <li >
+      <a class="nav-link" href="<?php echo ROOT_URL; ?>users/logout">Log Out <span class="sr-only">(current)</span></a>
+      </li>
+    <?php else :?>
       <li >
         <a class="nav-link" href="<?php echo ROOT_URL; ?>users/login">Login<span class="sr-only">(current)</span></a>
       </li>
       <li >
       <a class="nav-link" href="<?php echo ROOT_URL; ?>users/register">Register <span class="sr-only">(current)</span></a>
       </li>
+    <?php endif;?>  
     </ul>
   </div>
 </nav>

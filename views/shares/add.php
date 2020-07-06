@@ -1,5 +1,6 @@
 <div class="card">
 <div class="card-body">
+<h3>Share Something</h3>
    <form method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
         <div class="form-group">
         <label>Share Title</label>
