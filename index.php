@@ -5,6 +5,7 @@ session_start();
 // include config
 require('config.php');
 
+require('classes/messages.php');
 require('classes/bootstrap.php');
 require('classes/controller.php');
 require('classes/model.php');
